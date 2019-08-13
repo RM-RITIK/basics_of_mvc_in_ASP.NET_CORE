@@ -1,10 +1,5 @@
 ﻿@model MVCPractice.Models.Employee
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
     <h3> @ViewData["PageTitle"] </h3>
     @{
         var employee = ViewData["Employee"] as MVCPractice.Models.Employee;
@@ -40,6 +35,4 @@
     <div>
         Department: @Model.Department
     </div>
-
-</body>
-</html>
+  
