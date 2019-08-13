@@ -20,6 +20,15 @@ namespace MVCPractice.Controllers
         {
             return _employeeRepository.GetEmployee(1).Name;
         }
+        public ViewResult Details()
+        {
+            Employee model = _employeeRepository.GetEmployee(1);
+            ViewData["Employee"] = model;
+            ViewData["PageTitle"] = "Employee Details";
+            ViewBag.Employee = model;
+            ViewBag.x = "Employee Details using ViewBag";
+            return View(model);
+        }
 
         public IActionResult About()
         {

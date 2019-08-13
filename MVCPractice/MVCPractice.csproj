@@ -16,4 +16,7 @@
   <ItemGroup>
     <Compile Remove="Models\EmptyInterface.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Home\de.cshtml" />
+  </ItemGroup>
 </Project>
