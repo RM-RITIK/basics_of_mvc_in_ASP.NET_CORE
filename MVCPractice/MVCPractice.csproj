@@ -19,4 +19,7 @@
   <ItemGroup>
     <Content Remove="Views\Home\de.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
 </Project>

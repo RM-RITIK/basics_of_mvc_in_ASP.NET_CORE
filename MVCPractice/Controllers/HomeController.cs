@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MVCPractice.Models;
+using MVCPractice.ViewModels;
 
 namespace MVCPractice.Controllers
 {
@@ -16,9 +17,11 @@ namespace MVCPractice.Controllers
             _employeeRepository = employeeRepository;
         }
 
-        public string Index()
+        public ViewResult Index()
         {
-            return _employeeRepository.GetEmployee(1).Name;
+            var model = _employeeRepository.GetAllEmployee();
+            return View(model);
+            
         }
         public ViewResult Details()
         {
@@ -27,6 +30,13 @@ namespace MVCPractice.Controllers
             ViewData["PageTitle"] = "Employee Details";
             ViewBag.Employee = model;
             ViewBag.x = "Employee Details using ViewBag";
+
+            HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
+            {
+                Employee = _employeeRepository.GetEmployee(1),
+                PageTitle = "Employee Details"
+            };
+
             return View(model);
         }
 
